@@ -25,5 +25,5 @@ class ExampleAtoms(Scene):
 
         self.play(Write(vg), run_time=3)
         self.wait(3)
-        self.play(vg.animate.scale(0.4).move_to(3 * LEFT))
+        self.play(vg.animate.scale(0.4), vg.animate.move_to(3 * LEFT))
         self.wait(2)
