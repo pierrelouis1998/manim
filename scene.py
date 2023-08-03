@@ -27,5 +27,7 @@ class ExampleAtoms(Scene):
         self.wait(1)
         self.play(vg.animate.scale(0.5))
         self.wait()
-        self.play(vg.animate.shift(3 * LEFT))
+        self.play(
+            vg.animate.shift(3 * LEFT), vg.animate.scale_to_fit_width(0.3 * vg.width)
+        )
         self.wait(2)
