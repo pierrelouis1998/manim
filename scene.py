@@ -4,7 +4,7 @@ from manim import *
 class ExampleAtoms(Scene):
     def construct(self):
         axes = Axes(
-            x_range=[0, 2.2, 0.2],
+            x_range=[0, 2.1, 0.2],
             y_range=[0, 5, 0.5],
             x_length=10,
             y_length=6,
@@ -16,9 +16,10 @@ class ExampleAtoms(Scene):
         vg = VGroup()
 
         vg.add(axes, axes_labels)
-
-        for i in range(30):
-            x = i * 0.1
+        npoints = 50
+        for i in range(npoints):
+            dx = 2 / npoints
+            x = i * dx
             fx = 0.5 * np.sin(2 * PI * x) + 2 * x
             dot = Dot(
                 axes.coords_to_point(x, fx), color=BLUE, radius=DEFAULT_SMALL_DOT_RADIUS
