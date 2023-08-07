@@ -39,7 +39,7 @@ class ExampleAtoms(Scene):
         lin_data = VGroup()
         for i in range(npoints):
             dx = vg[-1].get_x() - vg[-2].get_x()
-            x0 = equal.get_x() + RIGHT
+            x0 = equal.get_x() + 1
             y0 = vg[2].get_y()
             lin_data.add(
                 Dot(
