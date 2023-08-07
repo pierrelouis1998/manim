@@ -49,6 +49,6 @@ class ExampleAtoms(Scene):
                     radius=vg[-1].radius,
                 )
             )
-        lin_data.scale(0.2)
+        lin_data.scale(0.2).move_to(equal.get_coord() + RIGHT)
         self.play(Write(lin_data), run_time=3)
         self.wait(3)
