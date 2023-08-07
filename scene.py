@@ -34,7 +34,7 @@ class ExampleAtoms(Scene):
         self.wait()
         self.play(vg.animate.shift(4 * LEFT).scale_to_fit_width(0.8 * vg.width))
         self.wait(2)
-        equal = Tex("$=", font_size=30).next_to(vg, RIGHT, buff=RIGHT)
+        equal = Tex("$=$", font_size=30).next_to(vg, RIGHT, buff=RIGHT)
         self.play(Write(equal))
         lin_data = VGroup()
         for i in range(npoints):
