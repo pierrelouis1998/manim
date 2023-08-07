@@ -35,13 +35,13 @@ class ExampleAtoms(Scene):
         self.wait()
         self.play(vg.animate.shift(4 * LEFT).scale_to_fit_width(0.8 * vg.width))
         self.wait(2)
-        equal = Tex("$=$", font_size=30).next_to(vg, RIGHT, buff=RIGHT)
+        equal = Tex("$=$", font_size=40).next_to(vg, RIGHT, buff=RIGHT)
         self.play(Write(equal))
         lin_data = VGroup()
         for i in range(npoints):
             dx = vg[-1].get_x() - vg[-2].get_x()
             x0 = equal.get_x() + 1
-            y0 = vg[2].get_y()
+            y0 = vg[0].get_y()
             lin_data.add(
                 Dot(
                     np.array([x0 + i * dx, y0 + i * 2 * dx, 0]),
@@ -49,6 +49,6 @@ class ExampleAtoms(Scene):
                     radius=vg[-1].radius,
                 )
             )
-        lin_data.scale(0.5).scale_to_fit_width(0.8 * vg.width)
+        lin_data.scale(0.2)
         self.play(Write(lin_data), run_time=3)
         self.wait(3)
