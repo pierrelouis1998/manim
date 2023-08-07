@@ -49,5 +49,6 @@ class ExampleAtoms(Scene):
                     radius=vg[-1].radius,
                 )
             )
+        lin_data.scale(0.5).scale_to_fit_width(0.8 * vg.width)
         self.play(Write(lin_data), run_time=3)
         self.wait(3)
