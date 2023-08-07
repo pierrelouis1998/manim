@@ -27,7 +27,7 @@ class ExampleAtoms(Scene):
             # dot.add_updater(lambda obj: obj.move_to(axes.coords_to_point(x, fx)))
             vg.add(dot)
 
-        self.play(Write(vg), run_time=4)
+        self.play(Write(vg), run_time=4, rate_functions=lambda t: t ** 3)
         self.wait(1)
         self.play(vg.animate.scale(0.5))
         self.wait()
