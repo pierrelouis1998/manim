@@ -42,6 +42,10 @@ class ExampleAtoms(Scene):
             x0 = equal.get_x() + RIGHT
             y0 = vg[2].get_y()
             lin_data.add(
-                Dot([x0, y0 + i * 2 * dx], color=YELLOW_B, radius=vg[-1].radius)
+                Dot(
+                    np.array(x0, y0 + i * 2 * dx, 0),
+                    color=YELLOW_B,
+                    radius=vg[-1].radius,
+                )
             )
         self.play(Write(lin_data))
